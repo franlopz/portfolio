@@ -36,7 +36,7 @@
   text-align: justify;
 }
 
-@media (min-aspect-ratio: 4/5) {
+@media (min-aspect-ratio: 5/5) {
   .container {
     flex-direction: row;
     justify-content: space-between;
