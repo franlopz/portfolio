@@ -1,0 +1,72 @@
+[
+  {
+    "icon": "/knowledge/css.svg",
+    "title": "CSS",
+    "alternateIcon": "/knowledge/ColorIcons/css.svg"
+  },
+  {
+    "icon": "/knowledge/html.svg",
+    "title": "HTML",
+    "alternateIcon": "/knowledge/ColorIcons/html.svg"
+  },
+  {
+    "icon": "/knowledge/git.svg",
+    "title": "Git",
+    "alternateIcon": "/knowledge/ColorIcons/git.svg"
+  },
+  {
+    "icon": "/knowledge/react.svg",
+    "title": "React",
+    "alternateIcon": "/knowledge/ColorIcons/react.svg"
+  },
+  {
+    "icon": "/knowledge/js.svg",
+    "title": "JavaScript",
+    "alternateIcon": "/knowledge/ColorIcons/js.svg"
+  },
+  {
+    "icon": "/knowledge/typescript.svg",
+    "title": "TypeScript",
+    "alternateIcon": "/knowledge/ColorIcons/typescript.svg"
+  },
+  {
+    "icon": "/knowledge/redux.svg",
+    "title": "Redux",
+    "alternateIcon": "/knowledge/ColorIcons/redux.svg"
+  },
+  {
+    "icon": "/knowledge/fastapi.svg",
+    "title": "FastApi",
+    "alternateIcon": "/knowledge/ColorIcons/fastapi.svg"
+  },
+  {
+    "icon": "/knowledge/mongodb.svg",
+    "title": "MongoDB",
+    "alternateIcon": "/knowledge/ColorIcons/mongodb.svg"
+  },
+  {
+    "icon": "/knowledge/mysql.svg",
+    "title": "MySQL",
+    "alternateIcon": "/knowledge/ColorIcons/mysql.svg"
+  },
+  {
+    "icon": "/knowledge/nextjs.svg",
+    "title": "Next.js",
+    "alternateIcon": "/knowledge/ColorIcons/nextjs.svg"
+  },
+  {
+    "icon": "/knowledge/nodejs.svg",
+    "title": "Node.js",
+    "alternateIcon": "/knowledge/ColorIcons/nodejs.svg"
+  },
+  {
+    "icon": "/knowledge/reacttestinglibrary.svg",
+    "title": "React Testing Library",
+    "alternateIcon": "/knowledge/ColorIcons/reacttestinglibrary.svg"
+  },
+  {
+    "icon": "/knowledge/tailwindcss.svg",
+    "title": "Tailwind CSS",
+    "alternateIcon": "/knowledge/ColorIcons/tailwindcss.svg"
+  }
+]

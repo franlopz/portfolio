@@ -1,0 +1,38 @@
+.container {
+  margin: 0px 40px;
+}
+
+.container h2 {
+  margin: 0;
+}
+
+.icons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+@media (min-width: 350px) {
+  .icons {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 550px) {
+  .icons {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (min-width: 750px) {
+  .icons {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (min-width: 950px) {
+    .icons {
+      grid-template-columns: repeat(7, 1fr);
+    }
+  }
+  
