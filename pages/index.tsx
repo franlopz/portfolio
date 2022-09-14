@@ -4,8 +4,10 @@ import styles from '../styles/Home.module.css'
 import Header from 'components/Header'
 import About from 'components/About'
 import Knowledge from 'components/Knowledge'
+import Projects, { ProjectsArrayProps } from 'components/Projects'
+import { getAllFilesFrontMatter } from 'lib/markdown'
 
-const Home: NextPage = () => {
+const Home: NextPage<ProjectsArrayProps> = ({ projects }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -18,11 +20,17 @@ const Home: NextPage = () => {
         <main className={styles.main}>
           <About />
           <Knowledge />
+          <Projects projects={projects} />
         </main>
         <footer className={styles.footer}></footer>
       </div>
     </div>
   )
+}
+
+export async function getStaticProps() {
+  const projects = await getAllFilesFrontMatter('projects')
+  return { props: { projects } }
 }
 
 export default Home
