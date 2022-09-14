@@ -3,11 +3,12 @@ import Image from 'next/image'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { GrFormClose } from 'react-icons/gr'
 import { useState } from 'react'
+
 const menuItems = [
-  { title: 'About', link: '#about' },
-  { title: 'Knowledge', link: '#knowledge' },
-  { title: 'Projects', link: '#projects' },
-  { title: 'Contact', link: '#contact' }
+  { title: 'Projects', link: '/projects' },
+  { title: 'Blog', link: '/blog' },
+  { title: 'About', link: '/projects' },
+  { title: 'Contact', link: '/contact' }
 ]
 
 const Header = () => {
