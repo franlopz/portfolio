@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { GrFormClose } from 'react-icons/gr'
 import { useState } from 'react'
+import Link from 'next/link'
 
 const menuItems = [
   { title: 'Projects', link: '/projects' },
@@ -20,14 +21,14 @@ const Header = () => {
   return (
     <header className={styles.container}>
       <div className={styles.logo}>
-        <a href="">
+        <Link href="/">
           <Image
             src="https://fjlpbucket.s3.us-east-2.amazonaws.com/FJ.png"
             width={50}
             height={50}
             alt="FJLP"
           />
-        </a>
+        </Link>
       </div>
       <div className={styles['top-bar']}>
         <div className={styles['horizontal-menu']}>
