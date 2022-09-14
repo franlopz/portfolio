@@ -40,13 +40,34 @@ const IconCard: FC<Props> = ({ icon, title, alternateIcon }) => {
       onMouseMove={(e) => onMouseMoveHandler(e)}
       onMouseLeave={() => onMouseLeaveHandler()}
     >
-      <Image
-        className={styles.image}
-        src={isMouseOver ? alternateIcon : icon}
-        height="100%"
-        width="100%"
-        alt={title}
-      />
+      <div
+        style={{
+          visibility: isMouseOver ? 'visible' : 'hidden',
+          height: '0'
+        }}
+      >
+        <Image
+          className={styles.image}
+          src={alternateIcon}
+          height="100%"
+          width="100%"
+          alt={title}
+        />
+      </div>
+      <div
+        style={{
+          visibility: isMouseOver ? 'hidden' : 'visible'
+        }}
+      >
+        <Image
+          className={styles.image}
+          src={icon}
+          height="100%"
+          width="100%"
+          alt={title}
+        />
+      </div>
+
       {isMouseOver ? <div className={styles.tooltip}>{title}</div> : null}
     </div>
   )
