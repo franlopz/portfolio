@@ -62,6 +62,10 @@
   padding-top: 20px;
 }
 
+.logo{
+ cursor: pointer;  
+}
+
 .button {
   margin-left: auto;
   display: flex;

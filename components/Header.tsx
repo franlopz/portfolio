@@ -8,7 +8,7 @@ import Link from 'next/link'
 const menuItems = [
   { title: 'Projects', link: '/projects' },
   { title: 'Blog', link: '/blog' },
-  { title: 'About', link: '/projects' },
+  { title: 'About', link: '/about' },
   { title: 'Contact', link: '/contact' }
 ]
 

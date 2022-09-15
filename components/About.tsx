@@ -18,10 +18,11 @@ const About = () => {
       </div>
       <div className={styles.picture}>
         <Image
-          src="https://fjlpbucket.s3.us-east-2.amazonaws.com/personalPhoto.webp"
+          priority={true}
+          src="/web-developer.svg"
           layout="responsive"
-          width={200}
-          height={240}
+          width={500}
+          height={500}
           alt="FJLP"
         />
       </div>
