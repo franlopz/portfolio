@@ -1,0 +1,17 @@
+[
+  {
+    "label": "LinkedIN",
+    "link": "https://www.linkedin.com/in/franlopz",
+    "external": true
+  },
+  {
+    "label": "fran.jlp26@gmail.com",
+    "link": "mailto:fran.jlp26@gmail.com",
+    "external": true
+  },
+  {
+    "label": "GitHub",
+    "link": "https://github.com/franlopz/",
+    "external": true
+  }
+]
