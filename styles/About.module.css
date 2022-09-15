@@ -26,6 +26,11 @@
 
 .picture {
   width: 100%;
+  animation-name : mymove;
+  animation-iteration-count : infinite;
+  animation-direction : alternate;
+  animation-duration : 2s;
+  filter: drop-shadow(30px 10px 4px #d1d1d1);
 }
 
 .announcement {
@@ -65,4 +70,9 @@
   .picture {
     width: 500px;
   }
+}
+
+@keyframes mymove {
+  from {transform: translateY(-20px);}
+  to {transform: translateY(20px)};
 }
