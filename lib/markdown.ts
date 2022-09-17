@@ -20,7 +20,7 @@ export const getAllFilesFrontMatter = async (type: string) => {
     const source = fs.readFileSync(path.join(root, 'data', type, file), 'utf-8')
     console.log(source)
     const { data } = matter(source)
-    return { ...data, slug: `${type}/${file.replace('.md', '')}` }
+    return { ...data, slug: `${type}/${file.replace('.mdx', '')}` }
   })
 
   return frontMatterFiles
@@ -28,7 +28,7 @@ export const getAllFilesFrontMatter = async (type: string) => {
 
 export const getfilesBySlug = async ({ type, slug }: PropFileBySlug) => {
   const mdSource = fs.readFileSync(
-    path.join(root, 'data', type, `${slug}.md`),
+    path.join(root, 'data', type, `${slug}.mdx`),
     'utf-8'
   )
 
