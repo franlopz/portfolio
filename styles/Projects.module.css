@@ -32,6 +32,8 @@
   color: rgb(61, 61, 61);
   margin: 0;
   gap: 10px;
+  flex-wrap: wrap;
+
 }
 
 .technologies h4 {
