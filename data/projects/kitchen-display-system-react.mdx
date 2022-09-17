@@ -1,0 +1,88 @@
+---
+title: 'Kitchen Display'
+technologies:
+  [
+    'React',
+    'TypeScript',
+    'MongoDB',
+    'WebSocket',
+    'Redux Toolkit',
+    'React Router',
+    'CSS Modules'
+  ]
+description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sodales eu massa sit amet condimentum. Morbi dignissim ligula nisi, et accumsan tortor auctor eget. Proin commodo ex fermentum tellus laoreet, nec aliquet elit ultrices. Proin ultricies eget velit sed tincidunt. Curabitur ac tempus ante. Quisque a ultrices justo. Nullam luctus.'
+imageUrl: 'https://fjlpbucket.s3.us-east-2.amazonaws.com/projects/kds.webp'
+---
+
+# Kitchen Display System - Frontend
+
+<Img
+  src="https://fjlpbucket.s3.us-east-2.amazonaws.com/kds-mockup.webp"
+  width="500"
+  height="300"
+  layout="responsive"
+/>
+
+## Introduction
+
+Web application built with React that improves productivity in restaurants' kitchens by using a digitalized and modern way to receive, prepare and mark orders as done. It simplifies back-of-house operations. Kitchen staff can manage incoming orders with real-time notifications and time alerts. It replaces printers and paper tickets in the kitchen.
+
+## Deployed application
+
+- [https://kds.techpos.com](https://kds.techpos.com)
+
+## Motivation to develop this application
+
+I was working in a restaurant for a few years, it operates with a POS which can be customized to build a kitchen display system, it works fine the most of time but I identified some problems/improvements:
+
+- Depending on the screen size, only a couple of orders can be shown.
+- It freezes for a couple of seconds at marking the order as done.
+- It can run on a windows computer only.
+- The kitchen display needs a server that is a pc running on the local network.
+- It doesn’t have sound alerts.
+- Modifying the layout is complex because there are many inputs that need to be updated.
+- It crashes if the server is offline.
+
+## Requirements
+
+I talked to kitchen staff to figure out their needs when an order is received, they needed a quick and organized process, without screen freezes, visual and sound alerts, with automatic reconnection if the network fails and a summary feature.
+
+### Functional requirements
+
+- The system must allow login with an email and password.
+- An account can have multiple users with a unique pin code to see the orders screen.
+- When an order is received it should notify with a sound alert.
+- When an order is updated the change must be shown on the screen immediately.
+- The system must be accessed with any device and everywhere.
+- The system must have an easy way to update the layout and settings.
+- The system must have real-time communication.
+- The system must notify if the connection is down and try reconnection.
+- The system must have an order summary.
+
+## Built with
+
+- React
+- TypeScript
+- MongoDB
+- WebSocket (Socket.io)
+- Redux Toolkit
+- React Router
+- CSS Modules
+
+## Features
+
+- [x] Login with email
+- [x] Online
+- [x] Real-time updates
+- [x] Multiple users with unique pin
+- [x] Sound alerts
+- [x] Visual alerts
+- [x] Responsive
+- [x] Automatic reconnection
+- [x] Registration form
+- [x] Onboarding
+- [ ] Forgot password feature
+- [ ] Order summary
+- [ ] Map keyboard keys to mark orders as completed
+- [ ] Text to speech feature
+- [ ] Modify users settings
