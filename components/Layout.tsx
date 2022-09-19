@@ -4,14 +4,16 @@ import styles from 'styles/Layout.module.css'
 import Footer from './Footer'
 
 interface Props {
-  children: JSX.Element
+  children: JSX.Element | JSX.Element[]
 }
 const Layout: FC<Props> = ({ children }) => {
   return (
     <div className={styles.container}>
       <Header />
-      <div className={styles.content}>{children}</div>
-      <Footer />
+      <main className={styles.content}>{children}</main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   )
 }
