@@ -1,0 +1,42 @@
+.project-card {
+  cursor: pointer;
+  border-radius: 200px;
+  width: 100%;
+  max-width: 640px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.technologies {
+  display: flex;
+  flex-direction: row;
+  color: rgb(61, 61, 61);
+  margin: 0;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.technologies h4 {
+  margin: 0px 0px;
+  color: currentColor;
+  font-weight: lighter;
+}
+
+.technologies > h4::after {
+  content: '|';
+  padding-left: 12px;
+}
+
+.technologies > h4:last-child:after {
+  content: '';
+}
+
+.title {
+  margin: 5px 0px;
+  font-size: small;
+}
+
+.info {
+  padding: 15px;
+}
