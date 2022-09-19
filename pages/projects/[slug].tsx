@@ -1,10 +1,10 @@
-import { Project } from 'components/Projects'
 import { getFiles, getfilesBySlug } from 'lib/markdown'
 import { GetStaticProps } from 'next'
 import Layout from 'components/Layout'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import Image, { ImageProps } from 'next/image'
+import { Project } from 'pages'
 
 interface matterProps {
   frontMatter: Project
