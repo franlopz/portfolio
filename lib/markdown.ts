@@ -18,7 +18,6 @@ export const getAllFilesFrontMatter = async (type: string) => {
 
   const frontMatterFiles = files.map((file) => {
     const source = fs.readFileSync(path.join(root, 'data', type, file), 'utf-8')
-    console.log(source)
     const { data } = matter(source)
     return { ...data, slug: `${type}/${file.replace('.mdx', '')}` }
   })

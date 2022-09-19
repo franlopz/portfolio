@@ -15,7 +15,6 @@ const Projects = ({ projects }: ProjectsArrayProps) => {
             <ProjectCard key={project.title} {...project} />
           ))}
         </CardsContainer>
-        <Footer />
       </>
     </Layout>
   )

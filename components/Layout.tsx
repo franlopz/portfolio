@@ -8,13 +8,13 @@ interface Props {
 }
 const Layout: FC<Props> = ({ children }) => {
   return (
-    <div className={styles.container}>
-      <Header />
-      <main className={styles.content}>{children}</main>
-      <footer>
-        <Footer />
-      </footer>
-    </div>
+    <>
+      <div className={styles.container}>
+        <Header />
+        <main className={styles.content}>{children}</main>
+      </div>
+      <Footer />
+    </>
   )
 }
 
