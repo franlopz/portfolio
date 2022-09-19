@@ -13,7 +13,7 @@
 }
 
 .title {
-  width: 200px;
+  /* width: 200px; */
   min-width: 200px;
   font-size: 1rem;
   text-align: center;
@@ -37,7 +37,8 @@
   margin: 0px 20px;
   font-size: 1.3rem;
   color: #13303c;
-  width: 350px;
+  width: 100%;
+  max-width: 350px;
   text-align: justify;
 }
 
