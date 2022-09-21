@@ -1,17 +1,17 @@
 import { getFiles, getfilesBySlug } from 'lib/markdown'
-import { GetStaticProps } from 'next'
 import Layout from 'components/Layout'
-import { serialize } from 'next-mdx-remote/serialize'
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
-import { Project } from 'pages'
 import components from 'components/MDXComponents'
+import { GetStaticProps } from 'next'
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
+import { serialize } from 'next-mdx-remote/serialize'
+import { Post } from 'pages/blog'
 
 interface matterProps {
-  frontMatter: Project
+  frontMatter: Post
   source: MDXRemoteSerializeResult
 }
 
-const Project: React.FC<matterProps> = ({ source }) => {
+const Post: React.FC<matterProps> = ({ source }) => {
   return (
     <Layout>
       <MDXRemote {...source} components={components} />
@@ -20,7 +20,7 @@ const Project: React.FC<matterProps> = ({ source }) => {
 }
 
 export async function getStaticPaths() {
-  const posts = await getFiles('projects')
+  const posts = await getFiles('blog')
   const paths = posts.map((post) => ({
     params: {
       slug: post.replace('.mdx', '')
@@ -34,7 +34,7 @@ export async function getStaticPaths() {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { frontMatter, content } = await getfilesBySlug({
-    type: 'projects',
+    type: 'blog',
     slug: params?.slug as string
   })
   const source = await serialize(content, {})
@@ -42,4 +42,4 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return { props: { frontMatter, source } }
 }
 
-export default Project
+export default Post
