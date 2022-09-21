@@ -1,0 +1,26 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+    color: #444;
+    cursor: pointer;
+}
+
+.container *{
+    margin: 0;
+}
+
+.meta{
+    color:#535353;
+    font-size: 14px;
+    text-align: right;
+}
+
+.container:hover{
+    background-color: #f3f0dd;
+}
+
+.container:hover h3{
+    color: rgb(0, 94, 201);
+}
