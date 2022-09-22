@@ -21,7 +21,7 @@ const Project: React.FC<matterProps> = ({ source }) => {
 
 export async function getStaticPaths() {
   const posts = await getFiles('projects')
-  const paths = posts.map((post) => ({
+  const paths = posts?.map((post) => ({
     params: {
       slug: post.replace('.mdx', '')
     }

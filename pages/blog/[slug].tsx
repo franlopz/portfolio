@@ -21,7 +21,7 @@ const Post: React.FC<matterProps> = ({ source }) => {
 
 export async function getStaticPaths() {
   const posts = await getFiles('blog')
-  const paths = posts.map((post) => ({
+  const paths = posts?.map((post) => ({
     params: {
       slug: post.replace('.mdx', '')
     }
@@ -37,6 +37,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     type: 'blog',
     slug: params?.slug as string
   })
+
   const source = await serialize(content, {})
 
   return { props: { frontMatter, source } }

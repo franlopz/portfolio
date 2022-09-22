@@ -42,5 +42,7 @@ export const getfilesBySlug = async ({ type, slug }: PropFileBySlug) => {
     const { data: frontMatter, content } = matter(mdSource)
 
     return { frontMatter, content }
-  } catch (e) {}
+  } catch (e) {
+    return { frontMatter: {}, content: '' }
+  }
 }
