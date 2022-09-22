@@ -26,6 +26,7 @@ export async function getStaticPaths() {
       slug: post.replace('.mdx', '')
     }
   }))
+  if (paths?.length === 0) return { paths: [], fallback: false }
   return {
     paths,
     fallback: false
