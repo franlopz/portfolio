@@ -1,0 +1,73 @@
+---
+title: 'Kitchen Display - Backend'
+technologies:
+  [
+    'Node.js',
+    'TypeScript',
+    'Mongoose',
+    'MongoDB',
+    'Express',
+    'Socket.io',
+    'Bcrypt.js',
+    'JSON Web Token'
+  ]
+description: 'Web application built with React that improves productivity in the kitchen by using a digitalized and 
+modern way to receive, prepare and mark orders as done. It simplifies back-of-house operations. Kitchen staff can
+ manage incoming orders with real-time notifications and time alerts. It replaces printers and paper tickets in the kitchen.'
+imageUrl: 'https://fjlpbucket.s3.us-east-2.amazonaws.com/backend.webp'
+---
+
+# Kitchen Display - Backend
+
+## Introduction
+
+This project aims to offer a backend for the Kitchen Display Frontent project. The main objective is to provide a
+reliable service to save and show orders in the preperation areas of a restaurant/bar.
+
+- [Deployed project](https://kds.techpos.com)
+- [GitHub](https://github.com/franlopz/kitchen-display)
+
+I am using the next technologies in this project:
+
+- Node.js with Express: I chose Node.js as a development platform for executing JavaScript, which is the language that
+  I am more comfortable and Express as web framework because it provides small and robust tooling to HTTP servers.
+- MongoDB with mongoose: I needed a document oriented database to store data in JSON-like document which simplifies the work.
+- TypeScript: A superset of javascript with optional static typing, intellisense, error detection, consistency accross de code base.
+- Socket.io: Library to facilitate real-time communication.
+- Bcrypt.js: A library to help to hash passwords.
+- JSON Web Token: An standard for securely share information between client and server
+
+## Run the project
+
+You need to do the following:
+
+- Install Node.js.
+- Install npm or yarn.
+- Install [MongoDB](https://www.mongodb.com/docs/manual/administration/install-community/) and run it.
+- Clone the [GitHub repository](https://github.com/franlopz/kitchen-display).
+- Run `npm install`.
+- Create `.env` with PORT, SECRET and SECRETREFRESHTOKEN variables.
+  - Generate two RSA keys for SECRET and SECRETREFRESHTOKEN.
+  - Set the PORT in which the app will run.
+- Run `npm run dev`.
+
+## API endpoints
+
+To see API documentation go to `http://localhost:{$PORT}/doc` and you will see Swagger docs.
+
+You will to login to generate a token and a refresh token, this have to be used as a header parameter
+in the orders and setup endpoints.
+
+By default, the token expires in 3600 seconds and the refresh token in 432000 seconds, which is 1 hour and 5 days respectively.
+You can change these variables at `src/config.ts`.
+
+There is a verification of token and refresh token expiration using middlewares in protected routes, if token expires, you
+can use `auth/refresh/token` with refresh token as a parameter, called refresh-token. You can use it on each protected route
+call to keep the user logged in for a refresh token rotation, you may add a blacklist feature to add aditional secure.
+
+If refresh token expires, the user needs to login again.
+
+## Next features
+
+- API keys.
+- Reports.
