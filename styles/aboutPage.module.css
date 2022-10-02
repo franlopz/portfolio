@@ -17,3 +17,10 @@
 .info{
     width: 100%;
 }
+
+@media (max-width: 480px){
+    .section{
+        flex-direction: column;
+        align-items: center;
+    }
+}
