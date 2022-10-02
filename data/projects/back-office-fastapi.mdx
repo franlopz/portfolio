@@ -1,0 +1,281 @@
+---
+title: 'Back Office - Backend'
+technologies: ['React', 'Javascript', 'Tailwind CSS', 'Chart.js']
+description: 'Access and manage your information from your computer or smartphone
+anytime and everywhere, it works for any bussiness, designed for El Salvador.
+Display and export data, add purchases, manage suppliers. You can add multiple users
+to a bussiness and track your finances quick and easy.'
+imageUrl: 'https://fjlpbucket.s3.us-east-2.amazonaws.com/backend.webp'
+---
+
+# Back Office - Backend
+
+## Description
+
+This is the backend for Back Office frontend, it uses the following dependencies:
+
+- FastAPI
+- Peewee ORM for MySQL
+- pymysql
+- Fastapi-mail
+- python-jose
+- dotenv
+- passlib
+
+It connects to a MySQL database with pymysql and peewee as ORM, the database
+has the following structure:
+
+<details>
+<summary>Click to collapse</summary>
+
+| Tables in database |
+| ------------------ |
+| cities             |
+| client_credential  |
+| companies          |
+| companyaccount     |
+| compras            |
+| gastos             |
+| pagos              |
+| productos          |
+| proveedores        |
+| roles              |
+| states             |
+| status             |
+| tickets            |
+| users              |
+
+### cities Table
+
+| Field   | Type         | Null | Key | Default | Extra          |
+| ------- | ------------ | ---- | --- | ------- | -------------- |
+| id      | int          | NO   | PRI | NULL    | auto_increment |
+| stateId | int          | NO   |     | NULL    |                |
+| name    | varchar(255) | NO   |     | NULL    |                |
+
+### client_credential Table
+
+| Field   | Type         | Null | Key | Default | Extra          |
+| ------- | ------------ | ---- | --- | ------- | -------------- |
+| id      | int          | NO   | PRI | NULL    | auto_increment |
+| app_id  | varchar(255) | NO   | UNI | NULL    |                |
+| app_key | varchar(255) | NO   | UNI | NULL    |                |
+
+### companies Table
+
+| Field   | Type         | Null | Key | Default | Extra          |
+| ------- | ------------ | ---- | --- | ------- | -------------- |
+| id      | int          | NO   | PRI | NULL    | auto_increment |
+| name    | varchar(255) | NO   | PRI | NULL    |                |
+| address | varchar(255) | NO   |     | NULL    |                |
+| phone   | varchar(255) | NO   |     | NULL    |                |
+| uuid    | varchar(255) | NO   | UNI | NULL    |                |
+| city    | varchar(255) | NO   |     | NULL    |                |
+| state   | varchar(255) | NO   |     | NULL    |                |
+
+### companyaccount Table
+
+| Field     | Type         | Null | Key | Default | Extra          |
+| --------- | ------------ | ---- | --- | ------- | -------------- |
+| id        | int          | NO   | PRI | NULL    | auto_increment |
+| userId    | int          | YES  |     | NULL    |                |
+| companyId | int          | NO   |     | NULL    |                |
+| appId     | varchar(255) | YES  |     | NULL    |                |
+
+### compras Table
+
+| Field        | Type         | Null | Key | Default | Extra          |
+| ------------ | ------------ | ---- | --- | ------- | -------------- |
+| id           | int          | NO   | PRI | NULL    | auto_increment |
+| fecha        | date         | YES  |     | NULL    |                |
+| documento    | varchar(255) | YES  |     | NULL    |                |
+| tipo         | varchar(255) | YES  |     | NULL    |                |
+| referencia   | varchar(255) | YES  |     | NULL    |                |
+| nrc          | varchar(255) | YES  |     | NULL    |                |
+| nombre       | varchar(255) | YES  |     | NULL    |                |
+| compra       | float        | YES  |     | NULL    |                |
+| iva          | float        | YES  |     | NULL    |                |
+| guardado     | datetime     | YES  |     | NULL    |                |
+| documentoId  | int          | NO   |     | NULL    |                |
+| tipoId       | int          | NO   |     | NULL    |                |
+| dui          | varchar(255) | NO   |     | NULL    |                |
+| comInGra     | float        | NO   |     | NULL    |                |
+| comInEx      | float        | NO   |     | 0       |                |
+| intExNoSuj   | float        | NO   |     | 0       |                |
+| imExNoSuj    | float        | NO   |     | 0       |                |
+| inGraBie     | float        | NO   |     | 0       |                |
+| imGravBie    | float        | NO   |     | 0       |                |
+| imGravSer    | float        | NO   |     | 0       |                |
+| attachmentId | int          | NO   |     | 3       |                |
+| companyUuid  | varchar(255) | NO   |     | NULL    |                |
+
+### gastos Table
+
+| Field       | Type         | Null | Key | Default | Extra          |
+| ----------- | ------------ | ---- | --- | ------- | -------------- |
+| id          | int          | NO   | PRI | NULL    | auto_increment |
+| tipo        | varchar(255) | YES  |     | NULL    |                |
+| fecha       | date         | YES  |     | NULL    |                |
+| descripcion | varchar(255) | YES  |     | NULL    |                |
+| guardado    | datetime     | YES  |     | NULL    |                |
+| monto       | float        | YES  |     | NULL    |                |
+| companyUuid | varchar(255) | NO   |     | NULL    |                |
+
+### pagos Table
+
+| Field       | Type         | Null | Key | Default | Extra          |
+| ----------- | ------------ | ---- | --- | ------- | -------------- |
+| id          | int          | NO   | PRI | NULL    | auto_increment |
+| fecha       | date         | YES  |     | NULL    |                |
+| tipoPago    | varchar(255) | YES  |     | NULL    |                |
+| pago        | float        | YES  |     | NULL    |                |
+| caja        | varchar(255) | YES  |     | NULL    |                |
+| hora        | time         | YES  |     | NULL    |                |
+| usuario     | varchar(255) | YES  |     | NULL    |                |
+| correlativo | int          | YES  |     | NULL    |                |
+| anulado     | varchar(255) | YES  |     | NULL    |                |
+| iva         | float        | YES  |     | NULL    |                |
+| tid         | int          | YES  |     | NULL    |                |
+| companyUuid | varchar(255) | NO   |     | NULL    |                |
+
+### productos Table
+
+| Field       | Type         | Null | Key | Default | Extra          |
+| ----------- | ------------ | ---- | --- | ------- | -------------- |
+| id          | int          | NO   | PRI | NULL    | auto_increment |
+| fecha       | date         | YES  |     | NULL    |                |
+| hora        | time         | YES  |     | NULL    |                |
+| producto    | varchar(255) | YES  |     | NULL    |                |
+| cantidad    | float        | YES  |     | NULL    |                |
+| porcion     | varchar(255) | YES  |     | NULL    |                |
+| venta       | varchar(255) | YES  |     | NULL    |                |
+| tid         | int          | YES  |     | NULL    |                |
+| precio      | float        | YES  |     | NULL    |                |
+| companyUuid | varchar(255) | NO   |     | NULL    |                |
+
+### proveedores Table
+
+| Field       | Type         | Null | Key | Default | Extra          |
+| ----------- | ------------ | ---- | --- | ------- | -------------- |
+| id          | int          | NO   | PRI | NULL    | auto_increment |
+| nombre      | varchar(255) | YES  |     | NULL    |                |
+| nrc         | varchar(255) | YES  |     | NULL    |                |
+| guardado    | datetime     | YES  |     | NULL    |                |
+| companyUuid | varchar(255) | NO   |     | NULL    |                |
+
+### roles Table
+
+| Field    | Type         | Null | Key | Default | Extra          |
+| -------- | ------------ | ---- | --- | ------- | -------------- |
+| id       | int          | NO   | PRI | NULL    | auto_increment |
+| roleName | varchar(255) | NO   | PRI | NULL    |                |
+
+### states Table
+
+| Field | Type         | Null | Key | Default | Extra          |
+| ----- | ------------ | ---- | --- | ------- | -------------- |
+| id    | int          | NO   | PRI | NULL    | auto_increment |
+| name  | varchar(255) | NO   | UNI | NULL    |                |
+
+### status Table
+
+| Field | Type        | Null | Key | Default | Extra          |
+| ----- | ----------- | ---- | --- | ------- | -------------- |
+| id    | int         | NO   | PRI | NULL    | auto_increment |
+| name  | varchar(45) | NO   | UNI | NULL    |                |
+
+### tickets Table
+
+| Field             | Type         | Null | Key | Default | Extra          |
+| ----------------- | ------------ | ---- | --- | ------- | -------------- |
+| id                | int          | NO   | PRI | NULL    | auto_increment |
+| fecha             | date         | YES  |     | NULL    |                |
+| hora              | time         | YES  |     | NULL    |                |
+| total             | float        | YES  |     | NULL    |                |
+| tipo              | varchar(255) | YES  |     | NULL    |                |
+| documento         | varchar(255) | YES  |     | NULL    |                |
+| puntosLealtad     | varchar(255) | YES  |     | NULL    |                |
+| correlativo       | int          | YES  |     | NULL    |                |
+| descuentoTotal    | float        | YES  |     | NULL    |                |
+| propina           | float        | YES  |     | NULL    |                |
+| descuentoLealtad  | float        | YES  |     | NULL    |                |
+| servicioDomicilio | float        | YES  |     | NULL    |                |
+| cliente           | varchar(255) | YES  |     | NULL    |                |
+| mesa              | varchar(255) | YES  |     | NULL    |                |
+| anulado           | varchar(255) | YES  |     | NULL    |                |
+| mesero            | varchar(255) | YES  |     | NULL    |                |
+| tid               | int          | YES  |     | NULL    |                |
+| companyUuid       | varchar(255) | NO   |     | NULL    |                |
+| docTipo           | varchar(255) | NO   |     | NULL    |                |
+| docTipoId         | int          | NO   |     | NULL    |                |
+| docId             | varchar(45)  | NO   |     | NULL    |                |
+| numResolucion     | varchar(255) | NO   |     | NULL    |                |
+| docSerie          | varchar(255) | NO   |     | NULL    |                |
+| venEx             | float        | NO   |     | 0       |                |
+| venNoSuj          | float        | NO   |     | 0       |                |
+| venGrabLoc        | float        | NO   |     | 0       |                |
+| venCueTerNoDom    | float        | NO   |     | 0       |                |
+| anexoNum          | int          | NO   |     | 0       |                |
+| nrc               | varchar(255) | NO   |     | NULL    |                |
+| nombre            | varchar(255) | NO   |     | NULL    |                |
+| dui               | varchar(255) | NO   |     | NULL    |                |
+| maqNum            | varchar(45)  | NO   |     |         |                |
+| venIntExNoSujProp | float        | NO   |     | 0       |                |
+| expDenCA          | float        | NO   |     | 0       |                |
+| expFueCA          | float        | NO   |     | 0       |                |
+| expSer            | float        | NO   |     | 0       |                |
+| venZoFra          | float        | NO   |     | 0       |                |
+| tax               | float        | NO   |     | 0       |                |
+
+### users Table
+
+| Field        | Type         | Null | Key | Default | Extra          |
+| ------------ | ------------ | ---- | --- | ------- | -------------- |
+| id           | int          | NO   | PRI | NULL    | auto_increment |
+| email        | varchar(255) | NO   | UNI | NULL    |                |
+| lastName     | varchar(255) | NO   |     | NULL    |                |
+| passwordSalt | varchar(255) | NO   |     | NULL    |                |
+| passwordHash | varchar(255) | NO   |     | NULL    |                |
+| createdDate  | datetime     | NO   |     | NULL    |                |
+| firstName    | varchar(255) | NO   |     | NULL    |                |
+| status       | varchar(255) | NO   |     | NULL    |                |
+| loginTries   | int          | NO   |     | 0       |                |
+| roleId       | int          | NO   |     | 1       |                |
+
+</details>
+
+- [**Go to GitHub**](https://github.com/franlopz/backoffice-backend)
+- [**Deployed project**](https://portal.svtechpos.com)
+- [**API documentation**](https://api.svtechpos.com/docs)
+
+## Features
+
+The features of this project are the following:
+
+- Login with email and password.
+- Store expenses, purchases, and sales.
+- Retrieve expenses, purchases, and sales for a period of time.
+- Login with client secret and client id for API consumption.
+- Sending email when a new user is registered.
+- Change password feature.
+- Roles permission.
+- JWT implementation.
+- Protected routes.
+- Password encryption.
+
+### To do
+
+- [ ] Refresh token implementation.
+- [ ] Change client secret feature.
+- [ ] Add Inventory feature.
+- [ ] Add employees management.
+
+## Setup
+
+1. lnstall and setup MySQL 8.0 or upper.
+2. Run `pip install requirements.txt`.
+3. rename `env.example` to `.env` and use your own variables.
+   1. The variable `SECRET_KEY` is used to encrypt the passwords.
+   2. DB_USER, DB_NAME and DB_PASSWORD, are used to connecto to MySQL database.
+   3. Variables with `MAIL` prefix are to send and email when user is created.
+4. Run `uvicorn main:app --reload`.
