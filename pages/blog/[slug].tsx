@@ -5,6 +5,7 @@ import { GetStaticProps } from 'next'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import { Post } from 'pages/blog'
+import remarkGfm from 'remark-gfm'
 
 interface matterProps {
   frontMatter: Post
@@ -39,7 +40,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     slug: params?.slug as string
   })
 
-  const source = await serialize(content, {})
+  const source = await serialize(content, {
+    mdxOptions: { remarkPlugins: [remarkGfm] }
+  })
 
   return { props: { frontMatter, source } }
 }
