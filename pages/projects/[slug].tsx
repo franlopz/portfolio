@@ -6,15 +6,20 @@ import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import remarkGfm from 'remark-gfm'
 import { Project } from 'pages'
 import components from 'components/MDXComponents'
+import Head from 'next/head'
 
 interface matterProps {
   frontMatter: Project
   source: MDXRemoteSerializeResult
 }
 
-const Project: React.FC<matterProps> = ({ source }) => {
+const Project: React.FC<matterProps> = ({ source, frontMatter }) => {
   return (
     <Layout>
+      <Head>
+        <title>{frontMatter.title}</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <MDXRemote {...source} components={components} />
     </Layout>
   )

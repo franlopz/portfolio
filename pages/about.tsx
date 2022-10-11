@@ -1,4 +1,5 @@
 import Layout from 'components/Layout'
+import Head from 'next/head'
 import Image from 'next/image'
 import styles from 'styles/aboutPage.module.css'
 
@@ -6,6 +7,10 @@ const About = () => {
   return (
     <Layout>
       <div>
+        <Head>
+          <title>About me</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
         <h1>About</h1>
         <section className={styles.section}>
           <div className={styles['image-container']}>

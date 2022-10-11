@@ -1,12 +1,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import Header from 'components/Header'
 import About from 'components/About'
 import Knowledge from 'components/Knowledge'
 import CardsContainer from 'components/CardsContainer'
 import { getAllFilesFrontMatter } from 'lib/markdown'
-import Footer from 'components/Footer'
 import ProjectCard from 'components/ProjectCard'
 import Layout from 'components/Layout'
 
