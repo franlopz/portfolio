@@ -2,8 +2,14 @@ import Image, { ImageProps } from 'next/image'
 
 const components = {
   Img: (props: ImageProps) => (
-    <div style={{ width: '100%' }}>
-      <Image {...props} layout="responsive" loading="lazy" />
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}
+    >
+      <Image {...props} loading="lazy" />
     </div>
   )
 }
