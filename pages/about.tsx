@@ -28,18 +28,19 @@ const About = () => {
               in El Salvador
             </p>
             <p>
-              I am a web developer specialized in React, I have experience
+              I am a web developer specializing in React, I have experience
               programming with JavaScript, TypeScript, Node.js and FastAPI. My
-              biggest passion is to solve problems by using the right
-              techonology tools. I like software and hardware.
+              biggest passion is to solve problems by using the right technology
+              tools. I like software and hardware.
             </p>
             <p>
-              I am able to understand customer&apos;s needs in order give them
-              the right solution, by analizing and making the right decision.
-              I&apos;m ready to take new challanges.
+              I can understand customer&apos;s needs in order to give them the
+              right solution, by analyzing and making the right decision.
+              I&apos;m ready to take new challenges.
             </p>
             <p>
-              I describe myself in three words: Persistent, empathic, dynamic.
+              I describe myself in three words: Persistent, empathic, and
+              dynamic.
             </p>
           </span>
         </section>

@@ -9,25 +9,25 @@ date: '2022-10-02'
 
 ## What is Alexa?
 
-Alexa is cloud-based voice service developed by amazon, it runs on Amazon devices, and third-party device manufacturers.
-It recognize spoken commands in more than 10 languages to perform pre-defined actions and custom skills.
+Alexa is a cloud-based voice service developed by amazon, it runs on Amazon devices, and third-party device manufacturers.
+It recognizes spoken commands in more than 10 languages to perform pre-defined actions and custom skills.
 
-Alexa is commonly found on Amazon devices like Amazon Echo but also runs on TVs, cars, third-party speakers and in any
-smart phone with Amazon Alexa app.
+Alexa is commonly found on Amazon devices like Amazon Echo but also runs on TVs, cars, third-party speakers, and in any
+smartphone with the Amazon Alexa app.
 
 ## Alexa skills
 
-Alexa has features that are installed by default, you can extend those with skills, that are like apps that provides
-new actions, content and services. Skills let users to perform tasks like listening to music, checking new or playing
+Alexa has features that are installed by default, you can extend those with skills, that are like apps that provide
+new actions, content and services. Skills let users perform tasks like listening to music, checking the news, or playing
 a game. There are more than 100,000 skills available to install,
 
 To create an Alexa Skill:
 
 ### Signup or login
 
-Go to [Alexa Developer Console](https://developer.amazon.com/alexa/console/ask) and login with your amazon account, if you do not have one, create it.
+Go to [Alexa Developer Console](https://developer.amazon.com/alexa/console/ask) and log in with your amazon account, if you do not have one, create one.
 
-### Create an skill
+### Create a skill
 
 You will see the main screen where it will list your skills. Click Create skill button.
 
@@ -42,7 +42,7 @@ You will see the main screen where it will list your skills. Click Create skill 
 
 There are four fields to modify/select:
 
-1. Name: Avoid brand names if you are not the owner or have the rights to use it.
+1. Name: Avoid brand names if you are not the owner or have the right to use them.
 2. Primary locale: It refers to the language in which the skill will work.
 
    <Img
@@ -52,7 +52,7 @@ There are four fields to modify/select:
      alt="skill naming"
    />
 
-3. Choose a model: To customize the skill's interactions choose `Custom` option.
+3. Choose a model: To customize the skill's interactions choose the `Custom` option.
 4. Choose a method to host the backend: The easiest way to create the skill is with Alexa-hosted options (Node.js or Phyton),
    if you prefer you can provision your own endpoint, you can use Node.js, Java, Python, C#, Go, Ruby, or PowerShell to create the
    Lambda function.
@@ -90,7 +90,7 @@ intent handler returns a response and it returns a spoken and/or visual response
    2.1 Go to Interaction model > Intents and click on `+ Add Intent`.
    2.2 Select `Create custom intent`, type a name for the intent and click on Create custom intent.
    2.3 The new intent is shown to add sample utterances, this is to invoke the intent. Sample utterances
-   can consist of only unicode characters, spaces, periods for abbreviations, underscores, possesive
+   can consist of only unicode characters, spaces, periods for abbreviations, underscores, possessive
    apostrophes, curly braces, and hyphens. The variables (slots) are inside curly braces.
    {' '}
 
@@ -100,9 +100,9 @@ intent handler returns a response and it returns a spoken and/or visual response
      height="618"
      alt="new utterance"
    />
-   2.4 If an utterance has an slot, the section Intent Slot will be updated with
-   the slot name to select the slot type. If you do not have any slot type, go to
-   numeral `3`.
+   2.4 If an utterance has a slot, the section Intent Slot will be updated with the
+   slot name to select the slot type. If you do not have any slot type, go to numeral
+   `3`.
    <Img
      src="https://fjlpbucket.s3.us-east-2.amazonaws.com/intentSlots.webp"
      width="1272"
@@ -110,7 +110,7 @@ intent handler returns a response and it returns a spoken and/or visual response
      alt="intent slots"
    />
 
-3. Go to `Assets > Slot Types` and click to `Add Slot Type`.
+3. Go to `Assets > Slot Types` and click on `Add Slot Type`.
    3.1 Select `Create a custom slot type with values` and type a name for the slot type.
    The name of a custom slot type must begin and end with an alphabetic character and can
    consist only of alphabetic characters or underscores
@@ -123,7 +123,7 @@ intent handler returns a response and it returns a spoken and/or visual response
      alt="slot values"
    />
 
-4. Click on Save Model and then on Build Model. You will be notified when building process
+4. Click on Save Model and then on Build Model. You will be notified when the building process
    ends.
    <Img
      src="https://fjlpbucket.s3.us-east-2.amazonaws.com/saveModel.webp"
@@ -134,17 +134,17 @@ intent handler returns a response and it returns a spoken and/or visual response
 
 #### Skill service
 
-Amazon Alexa is based in the Amazon Web Service, the easiest way to build
+Amazon Alexa is based on the Amazon Web Service, the easiest way to build
 a custom skill is to use AWS Lambda, a serverless, event-driven computer service,
-that automatically managing the computer resources. You can use Alexa-hosted Skills
+that automatically manages computer resources. You can use Alexa-hosted Skills
 to build your Lambda function in the Alexa developer console, or, you can store your
-code and resorces yourself. In the next steps we are going to use Alexa developer console.
+code and resources yourself. In the next steps, we are going to use the Alexa developer console.
 
 In Alexa Developer Console, click the **Code** tab. It will have a sample code handling
 intents using the Alexa Skills Kit SDK.
 
-The entry point of AWS Lambda function is the Lambda handler, the following code creates
-a Lambda handler function to route all inbound request to your skill.
+The entry point of the AWS Lambda function is the Lambda handler, the following code creates
+a Lambda handler function to route all inbound requests to your skill.
 
 The **ASK SDK v2** for Node.js provides a lambda builder function to
 construct the Lambda handler function that invokes the skill instance
@@ -159,11 +159,11 @@ and returns the response.
 
 #### Request Handlers
 
-Request handlers are reponsible for handling requests, it's an object
+Request handlers are responsible for handling requests, it's an object
 which has two methods:
 
-- **canHandle**: is called when a there is an incoming request,
-  to determine if the request handler is able to process it.
+- **canHandle**: is called when there is an incoming request,
+  to determine if the request handler can process it.
   It must return _true_ if the handler can handle the request
   or _false_ if cannot. This method is called on in the order that
   each request handler is registered. The SDK will choose the first
@@ -175,7 +175,7 @@ which has two methods:
     alt="can handle"
   />
 - **handle**: is called if canHandle returns _true_, it contains
-  the processing logic, accepts HandlerInput and returns a Response or
+  the processing logic accepts HandlerInput and returns a Response or
   Promise\<Response\>.
   {' '}
   <Img
@@ -188,5 +188,5 @@ which has two methods:
   to build the response, the detailed description of *responseBuilder* can be found
   on this [link](http://ask-sdk-node-typedoc.s3-website-us-east-1.amazonaws.com/classes/responsebuilder.html).
 
-When you finished, click on **Save** and then in **Deploy** button, when the process ends, you can click in
+When you finished, click on **Save** and then on **Deploy** button, when the process ends, you can click in
 **Test** tab and test it by using you interface that you just created.

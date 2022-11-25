@@ -2,9 +2,9 @@
 title: 'Back Office - Backend'
 technologies: ['React', 'Javascript', 'Tailwind CSS', 'Chart.js']
 description: 'Access and manage your information from your computer or smartphone
-anytime and everywhere, it works for any bussiness, designed for El Salvador.
-Display and export data, add purchases, manage suppliers. You can add multiple users
-to a bussiness and track your finances quick and easy.'
+anytime and everywhere, it works for any business, designed for El Salvador.
+Display and export data, add purchases, and manage suppliers. You can add multiple users
+to a business and track your finances quickly and easily.'
 imageUrl: 'https://fjlpbucket.s3.us-east-2.amazonaws.com/backend.webp'
 ---
 
@@ -12,7 +12,7 @@ imageUrl: 'https://fjlpbucket.s3.us-east-2.amazonaws.com/backend.webp'
 
 ## Description
 
-This is the backend for Back Office frontend, it uses the following dependencies:
+This is the backend for the Back Office frontend, it uses the following dependencies:
 
 - FastAPI
 - Peewee ORM for MySQL
@@ -268,14 +268,14 @@ The features of this project are the following:
 - [ ] Refresh token implementation.
 - [ ] Change client secret feature.
 - [ ] Add Inventory feature.
-- [ ] Add employees management.
+- [ ] Add employee management.
 
 ## Setup
 
-1. lnstall and setup MySQL 8.0 or upper.
+1. Install and set up MySQL 8.0 or upper.
 2. Run `pip install requirements.txt`.
 3. rename `env.example` to `.env` and use your own variables.
    1. The variable `SECRET_KEY` is used to encrypt the passwords.
-   2. DB_USER, DB_NAME and DB_PASSWORD, are used to connecto to MySQL database.
-   3. Variables with `MAIL` prefix are to send and email when user is created.
+   2. DB_USER, DB_NAME and DB_PASSWORD, are used to connect to MySQL database.
+   3. Variables with `MAIL` prefix are to send an email when a user is created.
 4. Run `uvicorn main:app --reload`.

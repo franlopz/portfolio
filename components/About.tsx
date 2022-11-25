@@ -11,8 +11,8 @@ const About = () => {
         </div>
         <div className={styles.announcement}>
           <p>
-            I&apos;m a web developer, specialized in react, solving problems and
-            undestanding customer needs.
+            I&apos;m a web developer, specializing in react, solving problems,
+            and understanding customer need.
           </p>
         </div>
       </div>
