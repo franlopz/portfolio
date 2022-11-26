@@ -12,7 +12,7 @@ const About = () => {
         <div className={styles.announcement}>
           <p>
             I&apos;m a web developer, specializing in react, solving problems,
-            and understanding customer need.
+            and understanding customer needs.
           </p>
         </div>
       </div>
